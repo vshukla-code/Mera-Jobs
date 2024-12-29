@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MeraJobs</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f5f5f5;
+      }
+
+      .container {
+        display: flex;
+        width: 800px;
+        background: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .left-panel {
+        background: #928ef9;
+        color: white;
+        width: 40%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .logo {
+        max-width: 200px;
+      }
+
+      h2 {
+        margin-top: 10px;
+      }
+
+      .social-icons {
+        margin-top: 20px;
+      }
+
+      .social-btn {
+        background: white;
+        color: #928ef9;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        margin: 5px;
+        cursor: pointer;
+      }
+
+      .right-panel {
+        width: 60%;
+        padding: 30px;
+      }
+
+      .tabs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .tabs button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #555;
+        border-bottom: 2px solid transparent;
+      }
+
+      .active-tab {
+        color: #000;
+        border-bottom: 2px solid #928ef9;
+      }
+
+      .form {
+        display: none;
+      }
+
+      .active-form {
+        display: block;
+      }
+
+      label {
+        display: block;
+        margin: 10px 0 5px;
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      .password-field {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      .password-field .toggle-password {
+        position: absolute;
+        right: 10px;
+        cursor: pointer;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 10px;
+        background: #928ef9;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background: #7267d7;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          width: 90%;
+        }
+
+        .left-panel {
+          width: 100%;
+          text-align: center;
+          padding: 20px;
+        }
+
+        .right-panel {
+          width: 100%;
+          padding: 20px;
+        }
+
+        .tabs {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .left-panel h2 {
+          font-size: 1.5rem;
+        }
+
+        .tabs button {
+          font-size: 14px;
+          padding: 8px 15px;
+        }
+
+        input {
+          padding: 8px;
+        }
+
+        .btn {
+          font-size: 14px;
+          padding: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-panel">
+        <img src="./assets/img/main-logo.jpeg" alt="MeraJobs Logo" class="logo" />
+        <h2>Welcome</h2>
+        <p>SignIn To MeraJobs</p>
+        <div class="social-icons">
+          <button class="social-btn">F</button>
+          <button class="social-btn">X</button>
+          <button class="social-btn">G</button>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="tabs">
+          <button id="loginTab" class="active-tab">Login</button>
+          <button id="registerTab">Register</button>
+        </div>
+        <form id="loginForm" class="form active-form">
+          <label for="email">Email ID*</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          />
+          <label for="password">Password*</label>
+          <div class="password-field">
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+            <span class="toggle-password" onclick="togglePassword()">👁️</span>
+          </div>
+          <button type="submit" class="btn">LOGIN</button>
+        </form>
+        <form id="registerForm" class="form">
+          <label for="name">Name*</label>
+          <input type="text" id="name" placeholder="Enter your name" required />
+          <label for="registerEmail">Email ID*</label>
+          <input
+            type="email"
+            id="registerEmail"
+            placeholder="Enter your email"
+            required
+          />
+          <button type="submit" class="btn">REGISTER</button>
+        </form>
+      </div>
+    </div>
+    <script>
+      // Tab Switching Logic
+      const loginTab = document.getElementById("loginTab");
+      const registerTab = document.getElementById("registerTab");
+      const loginForm = document.getElementById("loginForm");
+      const registerForm = document.getElementById("registerForm");
+
+      loginTab.addEventListener("click", () => {
+        loginTab.classList.add("active-tab");
+        registerTab.classList.remove("active-tab");
+        loginForm.classList.add("active-form");
+        registerForm.classList.remove("active-form");
+      });
+
+      registerTab.addEventListener("click", () => {
+        registerTab.classList.add("active-tab");
+        loginTab.classList.remove("active-tab");
+        registerForm.classList.add("active-form");
+        loginForm.classList.remove("active-form");
+      });
+
+      // Toggle Password Visibility
+      function togglePassword() {
+        const passwordField = document.getElementById("password");
+        const type =
+          passwordField.getAttribute("type") === "password"
+            ? "text"
+            : "password";
+        passwordField.setAttribute("type", type);
+      }
+    </script>
+  </body>
+</html>

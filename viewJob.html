@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Listings</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #f5f5f5;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        width: 90%;
+        max-width: 1200px;
+        margin-top: 30px;
+      }
+
+      .card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: left;
+        transition: transform 0.2s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+        color: #fff;
+      }
+
+      .card-header img {
+        height: 50px;
+        width: 50px;
+        margin-right: 10px;
+        border-radius: 50%;
+      }
+
+      .card-header h2 {
+        font-size: 18px;
+        margin: 0;
+      }
+
+      .card-body {
+        padding: 15px;
+      }
+
+      .card-body .details {
+        margin: 10px 0;
+      }
+
+      .card-body .skills {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .skill {
+        background-color: #eef;
+        border-radius: 12px;
+        padding: 5px 10px;
+        font-size: 14px;
+        color: #555;
+      }
+
+      .apply-button {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: #ff4d4d;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      .apply-button:hover {
+        background-color: #e43b3b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card" id="template-card">
+        <div class="card-header">
+          <img src="./assets/img/tranding_icon/j1.webp" alt="Company Logo" />
+          <h2>AI/ML Developer (7)</h2>
+        </div>
+        <div class="card-body">
+          <p class="details">Pronero Consultancy Services Pvt. Ltd.</p>
+          <p class="details">Salary: 51K to 100K</p>
+          <p class="details">Location: Bilaspur, Chhattisgarh</p>
+          <div class="skills">
+            <span class="skill">Python</span>
+            <span class="skill">MySQL</span>
+          </div>
+          <a href="#" class="apply-button">View & Apply</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const container = document.querySelector(".container");
+      for (let i = 0; i < 9; i++) {
+        const newCard = document
+          .getElementById("template-card")
+          .cloneNode(true);
+        newCard.removeAttribute("id");
+        container.appendChild(newCard);
+      }
+      document.getElementById("template-card").remove();
+    </script>
+  </body>
+</html>

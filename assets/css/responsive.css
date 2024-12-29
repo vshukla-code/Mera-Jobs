@@ -1,0 +1,235 @@
+/* Media Queries for responsiveness */
+
+@media (max-width: 1030px) {
+  /* nav bar responsive  */
+  .nav {
+    display: none;
+  }
+  #navbar #main-nav {
+    justify-content: space-between;
+  }
+  .icon-bar {
+    display: flex;
+  }
+
+  .showNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #252a3d;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    padding: 50px 10px;
+    top: 60px;
+    left: 0;
+    gap: 20px;
+  }
+
+  /* browser job search  */
+  #b-jobs .b-jobs-search {
+    justify-content: start;
+    gap: 20px;
+  }
+  #b-jobs .b-jobs-search input,
+  button,
+  select {
+    margin-right: 0px;
+  }
+
+  /* tranding job  */
+  #t-jobs .jobs-boxes {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  #t-jobs .jobs-boxes .jobs-box {
+    width: 100%;
+    background-color: rgb(235, 222, 222);
+  }
+  #t-jobs .jobs-boxes .first {
+    width: 100%;
+    background-color: #23c0e9;
+  }
+
+  /* job recent  */
+  .j-recentOne .headBtn {
+    flex-direction: column;
+  }
+
+  /* footer 1 */
+  .f-about {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+  .about-cmp {
+    width: 100%;
+    margin: 10px;
+    justify-content: space-evenly;
+  }
+}
+
+@media (max-width: 850px) {
+  #job-recent {
+    flex-direction: column;
+  }
+  #job-recent .j-recentOne {
+    width: 100%;
+  }
+  #job-recent .j-recentTwo {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  /* offering box  */
+  .offering-box {
+    flex-direction: column;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  .boxOneAll,
+  .boxTwoAll {
+    width: 100%;
+  }
+}
+
+@media (max-width: 750px) {
+  .showNav {
+    top: 56px;
+  }
+
+  button.commanBtn {
+    margin: 10px 0;
+  }
+  .recent-skills .langu {
+    display: flex;
+    margin: 10px 5px;
+    display: inline-block;
+  }
+  .recent-skills {
+    padding: 10px 0 0 20px;
+  }
+  /* browser job search  */
+  #b-jobs .b-jobs-search {
+    justify-content: start;
+    gap: 20px;
+  }
+  #b-jobs .b-jobs-search input,
+  button,
+  select {
+    padding: 10px 24px;
+    margin-right: 0px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+
+  #job-recent .j-recentTwo {
+    flex-wrap: wrap;
+  }
+
+  /* fotter 3 */
+  .copyright {
+    display: flex;
+    flex-direction: column;
+  }
+  .copyright #scroll-to-top {
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  /* top header  */
+  #header .header-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .social-contect a {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .section-p1 {
+    padding: 10px 20px;
+  }
+
+  /* recent content  */
+  .recent-content {
+    flex-direction: column;
+  }
+
+  .recent-job-heading a {
+    display: block;
+  }
+  .recent-job-heading ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #252a3d;
+  }
+
+  /* review  */
+  .slide p {
+    padding: 0 0px;
+  }
+
+  /* notification footer  */
+  .notification {
+    flex-direction: column;
+  }
+  .bell-form #bell-email {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+/* small mobile  */
+@media (max-width: 400px) {
+  .recent-content .heading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* user resistation  */
+  .user {
+    flex-direction: column;
+  }
+  .job-data {
+    flex-direction: column;
+  }
+  .recent-skills .langu {
+    display: flex;
+    margin: 10px 5px;
+    display: inline-block;
+  }
+  .job-data {
+    display: flex;
+    justify-content: space-between;
+    background-color: #23c0e9;
+    height: 100vh;
+  }
+  /* offering box  */
+  .o-Box1,
+  .o-Box2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .offHeading h3 {
+    font-size: 16px;
+    margin-top: 60px;
+    align-items: center;
+  }
+
+  .f-about {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
